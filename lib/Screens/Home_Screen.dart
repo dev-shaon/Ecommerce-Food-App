@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_ecommerce_app/Provider/User_provider.dart';
 import 'package:fruits_ecommerce_app/Screens/basket_screen.dart';
 import 'package:fruits_ecommerce_app/Screens/favorite_screen.dart';
+import 'package:fruits_ecommerce_app/Wigets/CustomListTile.dart';
 import 'package:fruits_ecommerce_app/Wigets/NonRecommended.dart';
 import 'package:fruits_ecommerce_app/Wigets/productcard.dart';
 import 'package:fruits_ecommerce_app/Provider/provider.dart';
@@ -69,8 +70,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final recomendetProduts = getRecomne();
-    final nonRecomendetProducts =
-        products.where((f) => f.isRecommendet == false).toList();
+    final nonRecomendetProducts = products
+        .where((f) => f.isRecommendet == false)
+        .toList();
 
     final favoriteProvider = Provider.of<FavoriteProvider>(context);
     final userProvider = Provider.of<UserProvider>(context);
@@ -79,36 +81,47 @@ class HomeScreen extends StatelessWidget {
       length: 4,
       child: Scaffold(
         drawer: Drawer(
+          backgroundColor: Colors.orange,
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
-              DrawerHeader(
-                decoration: BoxDecoration(color: Colors.orange),
-                child: Text(
-                  "About",
-                  style: TextStyle(color: Colors.white, fontSize: 40,fontWeight: FontWeight.bold),
+              Container(
+                height: 280,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage('https://thumbs.dreamstime.com/z/cartoon-fruit-salad-bowl-mascot-party-hat-colorful-cartoon-fruit-salad-bowl-character-wearing-party-hat-filled-402246228.jpg'),
+                    fit: BoxFit.cover,
+                  ),
                 ),
+                alignment: Alignment.bottomLeft,
+                padding: EdgeInsets.all(16),
+                // child: Text(
+                //   "About",
+                //   style: TextStyle(
+                //     color: Colors.orange,
+                //     fontSize: 40,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
               ),
-              ListTile(
-                leading: IconButton(onPressed: (){}, icon: Icon(Icons.person)),
-                title: Text("Profile"),
-                onTap: () {
-                  Navigator.pop(context);
-                },
+              SizedBox(height: 20,),
+              CustomListTile(
+                icon: Icons.person,
+                title: 'Profile',
+                onTap: () {},
               ),
-              ListTile(
-                leading: IconButton(onPressed: (){}, icon: Icon(Icons.settings)),
-                title: Text("Setting"),
-                onTap: () {
-                  Navigator.pop(context);
-                },
+              SizedBox(height: 6),
+              CustomListTile(
+                icon: Icons.settings,
+                title: 'Setting',
+                onTap: () {},
               ),
-              ListTile(
-                leading:IconButton(onPressed: (){}, icon: Icon(Icons.details)),
-                title: Text("Details"),
-                onTap: () {
-                  Navigator.pop(context);
-                },
+              SizedBox(height: 6),
+              CustomListTile(
+                icon: Icons.details,
+                title: 'Details',
+                onTap: () {},
               ),
             ],
           ),
@@ -184,8 +197,7 @@ class HomeScreen extends StatelessWidget {
 
                   Text(
                     "Hello ${userProvider.username}, What fruit salad \ncombo do you want today?",
-                    style:
-                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
 
                   SizedBox(height: 8),
@@ -215,8 +227,7 @@ class HomeScreen extends StatelessWidget {
 
                   Text(
                     "Recommended Combo?",
-                    style:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
 
                   SizedBox(height: 16),
@@ -225,8 +236,7 @@ class HomeScreen extends StatelessWidget {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: recomendetProduts.length,
-                    gridDelegate:
-                        SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10,
@@ -234,8 +244,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     itemBuilder: (context, index) {
                       final product = recomendetProduts[index];
-                      final isFav =
-                          favoriteProvider.isFavorite(product);
+                      final isFav = favoriteProvider.isFavorite(product);
                       return ProductCard(
                         product: product,
                         isFavorite: isFav,
@@ -266,14 +275,10 @@ class HomeScreen extends StatelessWidget {
                     height: 250,
                     child: TabBarView(
                       children: [
-                        NonRecommendedGrid(
-                            products: nonRecomendetProducts),
-                        NonRecommendedGrid(
-                            products: recomendetProduts),
-                        NonRecommendedGrid(
-                            products: nonRecomendetProducts),
-                        NonRecommendedGrid(
-                            products: nonRecomendetProducts),
+                        NonRecommendedGrid(products: nonRecomendetProducts),
+                        NonRecommendedGrid(products: recomendetProduts),
+                        NonRecommendedGrid(products: nonRecomendetProducts),
+                        NonRecommendedGrid(products: nonRecomendetProducts),
                       ],
                     ),
                   ),
