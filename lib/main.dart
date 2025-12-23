@@ -11,13 +11,13 @@ void main() {
         ChangeNotifierProvider(create: (_) => FavoriteProvider()),
         ChangeNotifierProvider(create: (_) => UserProvider()),
       ],
-      child: const MyApp(),
+      child: FruitsApp(),
     ),
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class FruitsApp extends StatelessWidget {
+  const FruitsApp({super.key});
 
   @override
   Widget build(BuildContext context) {

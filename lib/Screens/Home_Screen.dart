@@ -11,7 +11,6 @@ import '../Model_class/product.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  // list of products
   final List<Product> products = [
     Product(
       id: 1,
@@ -67,155 +66,176 @@ class HomeScreen extends StatelessWidget {
     return products.where((f) => f.isRecommendet == true).toList();
   }
 
-
   @override
   Widget build(BuildContext context) {
-
-    final recomendetProduts =getRecomne(); ////////////////////////////////////////only recommended
-
-    final nonRecomendetProducts = products.where((f) => f.isRecommendet == false).toList(); ///// only non-recommended
+    final recomendetProduts = getRecomne();
+    final nonRecomendetProducts =
+        products.where((f) => f.isRecommendet == false).toList();
 
     final favoriteProvider = Provider.of<FavoriteProvider>(context);
-      final userProvider = Provider.of<UserProvider>(context);
+    final userProvider = Provider.of<UserProvider>(context);
 
     return DefaultTabController(
       length: 4,
       child: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(color: Colors.orange),
+                child: Text(
+                  "About",
+                  style: TextStyle(color: Colors.white, fontSize: 40,fontWeight: FontWeight.bold),
+                ),
+              ),
+              ListTile(
+                leading: IconButton(onPressed: (){}, icon: Icon(Icons.person)),
+                title: Text("Profile"),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: IconButton(onPressed: (){}, icon: Icon(Icons.settings)),
+                title: Text("Setting"),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading:IconButton(onPressed: (){}, icon: Icon(Icons.details)),
+                title: Text("Details"),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
+
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: [
-                const SizedBox(height: 6),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
+            padding: EdgeInsets.all(20),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Builder(
+                        builder: (context) => IconButton(
+                          onPressed: () {
+                            Scaffold.of(context).openDrawer();
+                          },
                           icon: Icon(Icons.sort, size: 40),
                         ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Column(
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => FavoriteScreen(),
-                                  ),
-                                );
-                              },
-                              icon: const Icon(
-                                Icons.favorite,
-                                color: Colors.orange,
-                                size: 30,
+                      ),
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FavoriteScreen(),
+                                    ),
+                                  );
+                                },
+                                icon: Icon(
+                                  Icons.favorite,
+                                  color: Colors.orange,
+                                  size: 30,
+                                ),
                               ),
-                            ),
-                            const Text("Fav"),
-                          ],
-                        ),
-                        const SizedBox(width: 10),
-                        Column(
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => BasketScreen(),
-                                  ),
-                                );
-                              },
-                              icon: const Icon(
-                                Icons.shopping_basket,
-                                color: Colors.orange,
-                                size: 30,
-                              ),
-                            ),
-                            const Text("My basket"),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 24),
-
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Hello ${userProvider.username}, What fruit salad \ncombo do you want today?",
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                ),
-
-                const SizedBox(height: 24),
-
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        style: const TextStyle(
-                          fontSize: 18,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        decoration: InputDecoration(
-                          prefixIcon: const Icon(Icons.search),
-                          filled: true,
-                          fillColor: Color.fromARGB(255, 230, 229, 229),
-                          hintText: "Search for fruit salad combos",
-                          hintStyle: TextStyle(
-                            color: Color.fromARGB(255, 100, 99, 99),
-                            fontSize: 14,
+                              Text("Fav"),
+                            ],
                           ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide.none,
+                          SizedBox(width: 10),
+                          Column(
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => BasketScreen(),
+                                    ),
+                                  );
+                                },
+                                icon: Icon(
+                                  Icons.shopping_basket,
+                                  color: Colors.orange,
+                                  size: 30,
+                                ),
+                              ),
+                              Text("My basket"),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: 8),
+
+                  Text(
+                    "Hello ${userProvider.username}, What fruit salad \ncombo do you want today?",
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+
+                  SizedBox(height: 8),
+
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.search),
+                            filled: true,
+                            fillColor: Color.fromARGB(255, 230, 229, 229),
+                            hintText: "Search for fruit salad combos",
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide.none,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Icon(Icons.tune, size: 40),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 26),
-
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Recommended Combo?",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      SizedBox(width: 8),
+                      Icon(Icons.tune, size: 40),
+                    ],
                   ),
-                ),
-                const SizedBox(height: 26),
 
-                ////////////////////////////////////////////////////////////////////////////// Only recommended products
-                Flexible(
-                  child: GridView.builder(
+                  SizedBox(height: 12),
+
+                  Text(
+                    "Recommended Combo?",
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+
+                  SizedBox(height: 16),
+
+                  GridView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
                     itemCount: recomendetProduts.length,
                     gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 10,
-                          childAspectRatio: 3 / 4,
-                        ),
+                        SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                      childAspectRatio: 3 / 4,
+                    ),
                     itemBuilder: (context, index) {
                       final product = recomendetProduts[index];
-                      final isFav = favoriteProvider.isFavorite(product);
+                      final isFav =
+                          favoriteProvider.isFavorite(product);
                       return ProductCard(
                         product: product,
                         isFavorite: isFav,
@@ -225,50 +245,40 @@ class HomeScreen extends StatelessWidget {
                       );
                     },
                   ),
-                ),
 
-                const SizedBox(height: 10),
-                TabBar(
-                  isScrollable: true,
-                  labelColor: Colors.orange,
-                  unselectedLabelColor: Colors.black,
-                  indicatorColor: Colors.orange,
-                  labelStyle: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  unselectedLabelStyle: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  tabs: const [
-                    Tab(text: "Hottest"),
-                    Tab(text: "Popular"),
-                    Tab(text: "New combo"),
-                    Tab(text: "Top"),
-                  ],
-                  indicator: const UnderlineTabIndicator(
-                    borderSide: BorderSide(
-                      width: 4.0,
-                      color: Colors.deepOrange,
-                    ),
-                    insets: EdgeInsets.only(left: 0, right: 20),
-                  ),
-                ),
-                const SizedBox(height: 6),
+                  SizedBox(height: 10),
 
-                //////////////////////////////////////////////// Only nonRecommended products tabs
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      NonRecommendedGrid(products: nonRecomendetProducts),
-                      NonRecommendedGrid(products: recomendetProduts),
-                      NonRecommendedGrid(products: nonRecomendetProducts),
-                      NonRecommendedGrid(products: nonRecomendetProducts),
+                  TabBar(
+                    isScrollable: true,
+                    labelColor: Colors.orange,
+                    unselectedLabelColor: Colors.black,
+                    tabs: [
+                      Tab(text: "Hottest"),
+                      Tab(text: "Popular"),
+                      Tab(text: "New combo"),
+                      Tab(text: "Top"),
                     ],
                   ),
-                ),
-              ],
+
+                  SizedBox(height: 10),
+
+                  SizedBox(
+                    height: 250,
+                    child: TabBarView(
+                      children: [
+                        NonRecommendedGrid(
+                            products: nonRecomendetProducts),
+                        NonRecommendedGrid(
+                            products: recomendetProduts),
+                        NonRecommendedGrid(
+                            products: nonRecomendetProducts),
+                        NonRecommendedGrid(
+                            products: nonRecomendetProducts),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

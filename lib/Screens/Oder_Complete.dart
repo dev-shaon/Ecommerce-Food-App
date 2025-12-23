@@ -11,7 +11,7 @@ class OderComplete extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: 100),
+            SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

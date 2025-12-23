@@ -7,14 +7,15 @@ class Product {
   final int catagoryId;
   final bool isRecommendet;
 
-  Product( {
+  Product({
     required this.id,
     required this.title,
     required this.imageUrl,
     required this.price,
     this.isFavorite = false,
     required this.catagoryId,
-     this.isRecommendet=false,
+    this.isRecommendet = false,
   });
 }
+
 List<Product> basketItems = [];

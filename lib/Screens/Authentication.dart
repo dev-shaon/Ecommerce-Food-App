@@ -85,7 +85,7 @@ class _AuthenticationState extends State<Authentication> {
                     context.read<UserProvider>().changeUserName(newUserName: userNameController.text);
                     FocusManager.instance.primaryFocus?.unfocus();
                     userNameController.clear();
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                         builder: (context) => HomeScreen(),
