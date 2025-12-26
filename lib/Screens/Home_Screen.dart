@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_ecommerce_app/Provider/User_provider.dart';
 import 'package:fruits_ecommerce_app/Screens/basket_screen.dart';
 import 'package:fruits_ecommerce_app/Screens/favorite_screen.dart';
+import 'package:fruits_ecommerce_app/Screens/profile_screen.dart';
 import 'package:fruits_ecommerce_app/Wigets/CustomListTile.dart';
 import 'package:fruits_ecommerce_app/Wigets/NonRecommended.dart';
 import 'package:fruits_ecommerce_app/Wigets/productcard.dart';
@@ -90,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage('https://thumbs.dreamstime.com/z/cartoon-fruit-salad-bowl-mascot-party-hat-colorful-cartoon-fruit-salad-bowl-character-wearing-party-hat-filled-402246228.jpg'),
+                    image: NetworkImage('assets/images/carton.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -109,15 +110,20 @@ class HomeScreen extends StatelessWidget {
               CustomListTile(
                 icon: Icons.person,
                 title: 'Profile',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProfileScreen()),
+                  );
+                },
               ),
-              SizedBox(height: 6),
+              SizedBox(height: 10),
               CustomListTile(
                 icon: Icons.settings,
                 title: 'Setting',
                 onTap: () {},
               ),
-              SizedBox(height: 6),
+              SizedBox(height: 10),
               CustomListTile(
                 icon: Icons.details,
                 title: 'Details',
