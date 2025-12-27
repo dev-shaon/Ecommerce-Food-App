@@ -93,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/carton.jpg'),
+                    image: AssetImage('assets/images/carton.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -131,12 +131,7 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: 10),
-              CustomListTile(
-                icon: Icons.settings,
-                title: 'Setting',
-                onTap: () {},
-              ),
+
               SizedBox(height: 10),
               CustomListTile(
                 icon: Icons.assured_workload,
@@ -265,7 +260,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisCount: 2,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10,
-                      childAspectRatio: 3 / 4,
+                      childAspectRatio: 4 / 5,
                     ),
                     itemBuilder: (context, index) {
                       final product = recomendetProduts[index];

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fruits_ecommerce_app/Screens/FoodDetails.dart';
 import 'package:fruits_ecommerce_app/Model_class/product.dart';
 
-
 class MultipleProduct extends StatelessWidget {
   final Product product;
   final bool isFavorite;
@@ -19,6 +18,9 @@ class MultipleProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(color: Colors.orange, blurRadius: 3, offset: Offset(1, 1)),
+        ],
         color: const Color.fromARGB(255, 255, 240, 219),
         borderRadius: BorderRadius.circular(20),
       ),

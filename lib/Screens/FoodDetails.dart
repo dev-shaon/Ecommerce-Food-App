@@ -12,6 +12,7 @@ class FoodDetails extends StatefulWidget {
 }
 
 class _BasketScreenState extends State<FoodDetails> {
+  bool isFavorite = false;
   int count = 1;
 
   @override
@@ -154,14 +155,26 @@ class _BasketScreenState extends State<FoodDetails> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             CircleAvatar(
-                              radius: 28, // background size
-                              backgroundColor: Colors.orange.withOpacity(0.2),
+                              radius: 28,
+                              backgroundColor: isFavorite
+                                  ? Colors.orange.withOpacity(
+                                      0.4,
+                                    ) // ক্লিক করলে একটু গাঢ়
+                                  : Colors.orange.withOpacity(0.2),
                               child: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.favorite_border,
+                                onPressed: () {
+                                  setState(() {
+                                    isFavorite = !isFavorite;
+                                  });
+                                },
+                                icon: Icon(
+                                  isFavorite
+                                      ? Icons.favorite
+                                      : Icons.favorite_border,
                                   size: 30,
-                                  color: Colors.orange,
+                                  color: isFavorite
+                                      ? Colors.orange
+                                      : Colors.grey,
                                 ),
                               ),
                             ),

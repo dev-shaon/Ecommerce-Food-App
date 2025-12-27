@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../Screens/FoodDetails.dart';  
-import '../Model_class/product.dart';              
+import '../Screens/FoodDetails.dart';
+import '../Model_class/product.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -18,6 +18,9 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(color: Colors.orange, blurRadius: 3, offset: Offset(1, 1)),
+        ],
         color: const Color.fromARGB(255, 254, 247, 226),
         borderRadius: BorderRadius.circular(20),
       ),

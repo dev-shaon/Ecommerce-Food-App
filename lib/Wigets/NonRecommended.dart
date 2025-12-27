@@ -13,26 +13,28 @@ class NonRecommendedGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     final favoriteProvider = Provider.of<FavoriteProvider>(context);
 
-    return GridView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: products.length,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 1,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 10,
-        childAspectRatio: 1.4,
+    return SizedBox(
+      height: 190,                    
+      child: GridView.builder(
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        itemCount: products.length,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 1,
+          mainAxisSpacing: 12,
+          childAspectRatio: 1.30,      
+        ),
+        itemBuilder: (context, index) {
+          final product = products[index];
+          final isFav = favoriteProvider.isFavorite(product);
+          return MultipleProduct(
+            product: product,
+            isFavorite: isFav,
+            onFavoritePressed: () => favoriteProvider.toggleFavorite(product),
+          );
+        },
       ),
-      itemBuilder: (context, index) {
-        final product = products[index];
-        final isFav = favoriteProvider.isFavorite(product);
-        return MultipleProduct(
-          product: product,
-          isFavorite: isFav,
-          onFavoritePressed: () {
-            favoriteProvider.toggleFavorite(product);
-          },
-        );
-      },
     );
   }
 }
