@@ -16,7 +16,7 @@ class _AuthenticationState extends State<Authentication> {
 
   @override
   Widget build(BuildContext context) {
-    final userProvider = Provider.of<UserProvider>(context);
+
     return Scaffold(
       body: Column(
         children: [

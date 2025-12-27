@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:fruits_ecommerce_app/Screens/Home_Screen.dart';
+import 'package:fruits_ecommerce_app/Screens/Authentication.dart';
 import 'package:fruits_ecommerce_app/Screens/othentication/sign_up_screen.dart';
 
 class SignIn extends StatefulWidget {
@@ -26,8 +26,11 @@ class _SignInState extends State<SignIn> {
                 children: [
                   Text(
                     "Welcome",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28,                  color: Colors.deepOrange,
-),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28,
+                      color: Colors.deepOrange,
+                    ),
                   ),
                 ],
               ),
@@ -115,7 +118,7 @@ class _SignInState extends State<SignIn> {
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                      MaterialPageRoute(builder: (context) => Authentication()),
                     );
                   },
                   child: Text(

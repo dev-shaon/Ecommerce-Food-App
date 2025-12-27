@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fruits_ecommerce_app/Provider/User_provider.dart';
 import 'package:fruits_ecommerce_app/Screens/basket_screen.dart';
 import 'package:fruits_ecommerce_app/Screens/favorite_screen.dart';
+import 'package:fruits_ecommerce_app/Screens/notification_screen.dart';
+import 'package:fruits_ecommerce_app/Screens/privecy_screen.dart';
 import 'package:fruits_ecommerce_app/Screens/profile/profile_screen.dart';
 import 'package:fruits_ecommerce_app/Wigets/CustomListTile.dart';
 import 'package:fruits_ecommerce_app/Wigets/NonRecommended.dart';
@@ -91,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage('assets/images/carton.png'),
+                    image: AssetImage('assets/images/carton.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -106,14 +108,26 @@ class HomeScreen extends StatelessWidget {
                 //   ),
                 // ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               CustomListTile(
                 icon: Icons.person,
                 title: 'Profile',
+
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => ProfileScreen()),
+                  );
+                },
+              ),
+              SizedBox(height: 10),
+              CustomListTile(
+                icon: Icons.notification_important,
+                title: 'Notification',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NotificationScreen()),
                   );
                 },
               ),
@@ -125,9 +139,14 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               CustomListTile(
-                icon: Icons.details,
-                title: 'Details',
-                onTap: () {},
+                icon: Icons.assured_workload,
+                title: 'Privecy',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PrivecyScreen()),
+                  );
+                },
               ),
             ],
           ),
