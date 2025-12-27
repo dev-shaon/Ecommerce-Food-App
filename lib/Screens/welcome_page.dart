@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_ecommerce_app/Screens/Authentication.dart';
+import 'package:fruits_ecommerce_app/Screens/othentication/login_screen.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -66,7 +67,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Authentication(),
+                        builder: (context) => SignIn(),
                       ),
                     );
                   },

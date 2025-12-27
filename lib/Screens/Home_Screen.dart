@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_ecommerce_app/Provider/User_provider.dart';
 import 'package:fruits_ecommerce_app/Screens/basket_screen.dart';
 import 'package:fruits_ecommerce_app/Screens/favorite_screen.dart';
-import 'package:fruits_ecommerce_app/Screens/profile_screen.dart';
+import 'package:fruits_ecommerce_app/Screens/profile/profile_screen.dart';
 import 'package:fruits_ecommerce_app/Wigets/CustomListTile.dart';
 import 'package:fruits_ecommerce_app/Wigets/NonRecommended.dart';
 import 'package:fruits_ecommerce_app/Wigets/productcard.dart';
