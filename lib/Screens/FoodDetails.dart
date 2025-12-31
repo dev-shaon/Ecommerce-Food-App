@@ -5,7 +5,7 @@ import '../Model_class/product.dart';
 class FoodDetails extends StatefulWidget {
   final Product product;
 
-  const FoodDetails({super.key, required this.product});
+   FoodDetails({super.key, required this.product});
 
   @override
   State<FoodDetails> createState() => _BasketScreenState();
@@ -23,15 +23,15 @@ class _BasketScreenState extends State<FoodDetails> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(12),
+              padding:  EdgeInsets.all(12),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: ElevatedButton.icon(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-                  label: const Text(
+                  icon:  Icon(Icons.arrow_back_ios, color: Colors.black),
+                  label:  Text(
                     "Go back",
                     style: TextStyle(color: Colors.black),
                   ),
@@ -56,12 +56,12 @@ class _BasketScreenState extends State<FoodDetails> {
               ),
             ),
 
-            const SizedBox(height: 40),
+             SizedBox(height: 40),
 
             Expanded(
               child: Container(
                 width: double.infinity,
-                decoration: const BoxDecoration(
+                decoration:  BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40),
@@ -69,7 +69,7 @@ class _BasketScreenState extends State<FoodDetails> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding:  EdgeInsets.all(20),
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,12 +77,12 @@ class _BasketScreenState extends State<FoodDetails> {
                         SizedBox(height: 40),
                         Text(
                           widget.product.title,
-                          style: const TextStyle(
+                          style:  TextStyle(
                             fontSize: 36,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const SizedBox(height: 33),
+                         SizedBox(height: 33),
 
                         // Counter
                         Row(
@@ -98,12 +98,12 @@ class _BasketScreenState extends State<FoodDetails> {
                                   }
                                 }),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(
+                                  padding:  EdgeInsets.symmetric(
                                     horizontal: 12,
                                   ),
                                   child: Text(
                                     "$count",
-                                    style: const TextStyle(
+                                    style:  TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -118,7 +118,7 @@ class _BasketScreenState extends State<FoodDetails> {
                             ),
                             Text(
                               "₦ ${(widget.product.price * count).toStringAsFixed(2)}",
-                              style: const TextStyle(
+                              style:  TextStyle(
                                 fontSize: 22,
                                 color: Colors.orange,
                                 fontWeight: FontWeight.bold,
@@ -130,25 +130,25 @@ class _BasketScreenState extends State<FoodDetails> {
                         SizedBox(height: 64),
 
                         // Description
-                        const Text(
+                         Text(
                           "One Pack Contains:",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
                         ),
-                        const SizedBox(height: 6),
-                        const Text(
+                         SizedBox(height: 6),
+                         Text(
                           "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
                           style: TextStyle(fontSize: 15, color: Colors.black54),
                         ),
-                        const SizedBox(height: 44),
-                        const Text(
+                         SizedBox(height: 44),
+                         Text(
                           "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you.",
                           style: TextStyle(fontSize: 15, color: Colors.black54),
                         ),
 
-                        const SizedBox(height: 66),
+                         SizedBox(height: 66),
 
                         // Add to Basket Button
                         Row(
@@ -159,7 +159,7 @@ class _BasketScreenState extends State<FoodDetails> {
                               backgroundColor: isFavorite
                                   ? Colors.orange.withOpacity(
                                       0.4,
-                                    ) // ক্লিক করলে একটু গাঢ়
+                                    ) 
                                   : Colors.orange.withOpacity(0.2),
                               child: IconButton(
                                 onPressed: () {
@@ -183,7 +183,7 @@ class _BasketScreenState extends State<FoodDetails> {
                               onPressed: () {
                                 basketItems.add(
                                   widget.product,
-                                ); // ✅ Add product in basket
+                                ); 
 
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
@@ -208,7 +208,7 @@ class _BasketScreenState extends State<FoodDetails> {
                                 ),
                                 minimumSize: Size(280, 60),
                               ),
-                              child: const Text(
+                              child:  Text(
                                 "Add to basket",
                                 style: TextStyle(
                                   fontSize: 18,

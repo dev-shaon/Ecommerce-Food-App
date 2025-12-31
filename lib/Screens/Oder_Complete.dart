@@ -1,3 +1,4 @@
+import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits_ecommerce_app/Screens/Delivery_Status_scren.dart';
 import 'package:fruits_ecommerce_app/Screens/Home_Screen.dart';
@@ -11,14 +12,29 @@ class OderComplete extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: 50),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image(image: AssetImage("assets/images/oder.png"), height: 500),
-              ],
+            SizedBox(height: 100),
+            Center(
+              child: AvatarGlow(
+                    glowRadiusFactor: 0.3,
+                    animate: true,
+                    repeat: true,
+                    glowColor: Colors.green,
+                    child: Material(
+                      elevation: 8.0,
+                      shape:  CircleBorder(),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[100],
+                        radius: 80,
+                        child: Image(image: AssetImage("assets/images/confirom.png"))
+                      ),
+                    ),
+                  ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 56),
+            Image(image: AssetImage("assets/images/Congratulations!!!.png")),
+            SizedBox(height: 16),
+            Image(image: AssetImage("assets/images/text.png")),
+            SizedBox(height: 56),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,
@@ -30,7 +46,9 @@ class OderComplete extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => DeliveryStatusScren()),
+                  MaterialPageRoute(
+                    builder: (context) => DeliveryStatusScren(),
+                  ),
                 );
               },
               child: Text(
@@ -41,7 +59,10 @@ class OderComplete extends StatelessWidget {
             SizedBox(height: 46),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                );
               },
               borderRadius: BorderRadius.circular(20),
               child: Container(

@@ -33,7 +33,7 @@ class PrivecyScreen extends StatelessWidget {
 
             SizedBox(height: 20),
             Text(
-              "Notification",
+              "Privacy Policy",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 30,
