@@ -69,7 +69,7 @@ class _BasketScreenState extends State<FoodDetails> {
                   ),
                 ),
                 child: Padding(
-                  padding:  EdgeInsets.all(20),
+                  padding:  EdgeInsets.symmetric(horizontal: 20),
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

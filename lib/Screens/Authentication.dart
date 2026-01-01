@@ -18,86 +18,88 @@ class _AuthenticationState extends State<Authentication> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: 400,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.orangeAccent,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: 400,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.orangeAccent,
+              ),
+              child: Column(
+                children: [
+                  SizedBox(height: 40,),
+                  Image(image: AssetImage("assets/images/f3.png")),
+                  Image(image: AssetImage("assets/images/f2.png")),
+                ],
+              ),
             ),
-            child: Column(
-              children: [
-                SizedBox(height: 40,),
-                Image(image: AssetImage("assets/images/f3.png")),
-                Image(image: AssetImage("assets/images/f2.png")),
-              ],
-            ),
-          ),
-          SizedBox(height: 56),
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "What is your firstname?",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+            SizedBox(height: 56),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "What is your firstname?",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 16,),
+                  TextField(
+                    controller: userNameController,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    decoration: InputDecoration(
+                      filled: true, 
+                      fillColor: const Color(0xFFE0E0E0),
+                      hintText: "Enter your firstname",
+                      hintStyle: const TextStyle(color: Colors.grey, fontSize: 18),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide.none
                       ),
                     ),
-                  ],
-                ),
-                SizedBox(height: 16,),
-                TextField(
-                  controller: userNameController,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
                   ),
-                  decoration: InputDecoration(
-                    filled: true, 
-                    fillColor: const Color(0xFFE0E0E0),
-                    hintText: "Enter your firstname",
-                    hintStyle: const TextStyle(color: Colors.grey, fontSize: 18),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none
-                    ),
-                  ),
-                ),
-
-                SizedBox(height: 40,),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange,
-                    foregroundColor: Colors.white,
-                    minimumSize: Size(350, 60),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusGeometry.circular(10),
-                    ),
-                  ),
-                  onPressed: () {
-                    context.read<UserProvider>().changeUserName(newUserName: userNameController.text);
-                    FocusManager.instance.primaryFocus?.unfocus();
-                    userNameController.clear();
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomeScreen(),
+        
+                  SizedBox(height: 40,),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      foregroundColor: Colors.white,
+                      minimumSize: Size(350, 60),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusGeometry.circular(10),
                       ),
-                    );
-                  },
-                  child: Text("Start Ordering", style: TextStyle(fontSize: 18)),
-                ),
-              ],
+                    ),
+                    onPressed: () {
+                      context.read<UserProvider>().changeUserName(newUserName: userNameController.text);
+                      FocusManager.instance.primaryFocus?.unfocus();
+                      userNameController.clear();
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeScreen(),
+                        ),
+                      );
+                    },
+                    child: Text("Start Ordering", style: TextStyle(fontSize: 18)),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
