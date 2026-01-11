@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fruits_ecommerce_app/Screens/Authentication.dart';
-import 'package:fruits_ecommerce_app/Screens/Home_Screen.dart';
 import 'package:fruits_ecommerce_app/Screens/othentication/login_screen.dart';
 
 class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+   SignUp({super.key});
 
   @override
   State<SignUp> createState() => _SignUpState();
@@ -17,7 +16,7 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding:  EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -53,7 +52,7 @@ class _SignUpState extends State<SignUp> {
 
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(
+                    borderSide:  BorderSide(
                       color: Colors.orange, 
                       width: 1.5,
                     ),
@@ -61,7 +60,7 @@ class _SignUpState extends State<SignUp> {
 
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(
+                    borderSide:  BorderSide(
                       color: Colors.deepOrange, 
                       width: 2,
                     ),
@@ -77,7 +76,7 @@ class _SignUpState extends State<SignUp> {
 
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(
+                    borderSide:  BorderSide(
                       color: Colors.orange, 
                       width: 1.5,
                     ),
@@ -85,7 +84,7 @@ class _SignUpState extends State<SignUp> {
 
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(
+                    borderSide:  BorderSide(
                       color: Colors.deepOrange, 
                       width: 2,
                     ),
@@ -101,7 +100,7 @@ class _SignUpState extends State<SignUp> {
 
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(
+                    borderSide:  BorderSide(
                       color: Colors.orange, 
                       width: 1.5,
                     ),
@@ -109,7 +108,7 @@ class _SignUpState extends State<SignUp> {
 
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(
+                    borderSide:  BorderSide(
                       color: Colors.deepOrange, 
                       width: 2,
                     ),
