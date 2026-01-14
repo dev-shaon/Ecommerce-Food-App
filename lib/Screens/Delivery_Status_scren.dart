@@ -11,18 +11,15 @@ class DeliveryStatusScren extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(12),
+              padding: EdgeInsets.all(12),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: ElevatedButton.icon(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-                  label: const Text(
-                    "Go back",
-                    style: TextStyle(color: Colors.black),
-                  ),
+                  icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+                  label: Text("Go back", style: TextStyle(color: Colors.black)),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -43,13 +40,13 @@ class DeliveryStatusScren extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 40),
+            SizedBox(height: 40),
 
             //Container for List
             Expanded(
               child: Container(
                 width: double.infinity,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
@@ -57,7 +54,7 @@ class DeliveryStatusScren extends StatelessWidget {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: EdgeInsets.all(20),
                   child: Column(
                     children: [
                       SizedBox(height: 20),

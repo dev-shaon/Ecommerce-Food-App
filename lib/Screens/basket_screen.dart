@@ -16,18 +16,15 @@ class _BasketScreenState extends State<BasketScreen> {
         child: Column(
           children: [
             Padding(
-              padding:  EdgeInsets.all(12),
+              padding: EdgeInsets.all(12),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: ElevatedButton.icon(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon:  Icon(Icons.arrow_back_ios, color: Colors.black),
-                  label:  Text(
-                    "Go back",
-                    style: TextStyle(color: Colors.black),
-                  ),
+                  icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+                  label: Text("Go back", style: TextStyle(color: Colors.black)),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -39,8 +36,8 @@ class _BasketScreenState extends State<BasketScreen> {
               ),
             ),
 
-             SizedBox(height: 20),
-             Text(
+            SizedBox(height: 20),
+            Text(
               "Favorite Items",
               style: TextStyle(
                 color: Colors.white,
@@ -48,12 +45,12 @@ class _BasketScreenState extends State<BasketScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-             SizedBox(height: 40),
+            SizedBox(height: 40),
 
             Expanded(
               child: Container(
                 width: double.infinity,
-                decoration:  BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
@@ -174,8 +171,8 @@ class _BasketScreenState extends State<BasketScreen> {
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
         return Container(
-          padding:  EdgeInsets.all(16.0),
-          decoration:  BoxDecoration(
+          padding: EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(25.0),
@@ -202,12 +199,12 @@ class _BasketScreenState extends State<BasketScreen> {
                 ),
               ),
 
-               Text(
+              Text(
                 'Delivery address',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
               ),
-               SizedBox(height: 8),
-               TextField(
+              SizedBox(height: 8),
+              TextField(
                 decoration: InputDecoration(
                   hintText: '10th avenue, Lekki, Lagos State',
                   filled: true,
@@ -218,14 +215,14 @@ class _BasketScreenState extends State<BasketScreen> {
                   ),
                 ),
               ),
-               SizedBox(height: 20),
+              SizedBox(height: 20),
 
-               Text(
+              Text(
                 'Number we can call',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
               ),
-               SizedBox(height: 8),
-               TextField(
+              SizedBox(height: 8),
+              TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   hintText: '09090605708',
@@ -252,19 +249,19 @@ class _BasketScreenState extends State<BasketScreen> {
                         );
                       },
                       style: OutlinedButton.styleFrom(
-                        padding:  EdgeInsets.symmetric(vertical: 15),
-                        side:  BorderSide(color: Color(0xFFFF9800)),
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        side: BorderSide(color: Color(0xFFFF9800)),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      child:  Text(
+                      child: Text(
                         'Pay on delivery',
                         style: TextStyle(color: Color(0xFFFF9800)),
                       ),
                     ),
                   ),
-                   SizedBox(width: 15),
+                  SizedBox(width: 15),
 
                   Expanded(
                     child: ElevatedButton(
@@ -274,20 +271,20 @@ class _BasketScreenState extends State<BasketScreen> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFFE0F7FA),
                         foregroundColor: Colors.blue,
-                        padding:  EdgeInsets.symmetric(vertical: 20),
+                        padding: EdgeInsets.symmetric(vertical: 20),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
-                          side:  BorderSide(color: Colors.blue, width: 2),
+                          side: BorderSide(color: Colors.blue, width: 2),
                         ),
                         elevation: 0,
                       ),
-                      child:  Text('Pay with card'),
+                      child: Text('Pay with card'),
                     ),
                   ),
                 ],
               ),
 
-               SizedBox(height: 10),
+              SizedBox(height: 10),
             ],
           ),
         );
@@ -303,8 +300,8 @@ class _BasketScreenState extends State<BasketScreen> {
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
         return Container(
-          padding:  EdgeInsets.all(16.0),
-          decoration:  BoxDecoration(
+          padding: EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(25.0),
@@ -325,18 +322,18 @@ class _BasketScreenState extends State<BasketScreen> {
                     shape: BoxShape.circle,
                   ),
                   child: IconButton(
-                    icon:  Icon(Icons.close, color: Colors.black),
+                    icon: Icon(Icons.close, color: Colors.black),
                     onPressed: () => Navigator.pop(context),
                   ),
                 ),
               ),
 
-               Text(
+              Text(
                 'Card Holders Name',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
               ),
-               SizedBox(height: 8),
-               TextField(
+              SizedBox(height: 8),
+              TextField(
                 decoration: InputDecoration(
                   hintText: 'Adolphus Chris',
                   filled: true,
@@ -347,14 +344,14 @@ class _BasketScreenState extends State<BasketScreen> {
                   ),
                 ),
               ),
-               SizedBox(height: 20),
+              SizedBox(height: 20),
 
-               Text(
+              Text(
                 'Card Number',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
               ),
-               SizedBox(height: 8),
-               TextField(
+              SizedBox(height: 8),
+              TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   hintText: '1234 5678 9012 1314',
@@ -366,15 +363,15 @@ class _BasketScreenState extends State<BasketScreen> {
                   ),
                 ),
               ),
-               SizedBox(height: 20),
+              SizedBox(height: 20),
               Row(
                 children: <Widget>[
-                                                // Date Input
+                  // Date Input
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                         Text(
+                        Text(
                           'Date',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -382,7 +379,7 @@ class _BasketScreenState extends State<BasketScreen> {
                             color: Colors.black,
                           ),
                         ),
-                         SizedBox(height: 8.0),
+                        SizedBox(height: 8.0),
                         TextField(
                           decoration: InputDecoration(
                             hintText: '10/30',
@@ -399,14 +396,14 @@ class _BasketScreenState extends State<BasketScreen> {
                       ],
                     ),
                   ),
-                   SizedBox(width: 15),
+                  SizedBox(width: 15),
 
-                                                          // CCV Input
+                  // CCV Input
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                         Text(
+                        Text(
                           'CCV',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -414,7 +411,7 @@ class _BasketScreenState extends State<BasketScreen> {
                             color: Colors.black,
                           ),
                         ),
-                         SizedBox(height: 8.0),
+                        SizedBox(height: 8.0),
                         TextField(
                           decoration: InputDecoration(
                             hintText: '123',
@@ -433,12 +430,12 @@ class _BasketScreenState extends State<BasketScreen> {
                   ),
                 ],
               ),
-               SizedBox(height: 30),
+              SizedBox(height: 30),
 
               Container(
-                width: double.infinity, 
-                padding:  EdgeInsets.symmetric(vertical: 20),
-                decoration:  BoxDecoration(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 20),
+                decoration: BoxDecoration(
                   color: Color(0xFFFF9800),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20.0),
@@ -448,23 +445,27 @@ class _BasketScreenState extends State<BasketScreen> {
                 child: Center(
                   child: ElevatedButton(
                     onPressed: () {
-                     Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => OderComplete(),
-                          ),
-                        );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => OderComplete()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       foregroundColor: Colors.black,
-                      padding:  EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 50,
+                        vertical: 15,
+                      ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                       elevation: 0,
                     ),
-                    child:  Text('Complete Order',style: TextStyle(fontWeight: FontWeight.bold),),
+                    child: Text(
+                      'Complete Order',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),

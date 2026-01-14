@@ -37,7 +37,7 @@ class _AuthenticationState extends State<Authentication> {
             ),
             SizedBox(height: 56),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
               child: Column(
                 children: [
                   Row(
@@ -62,9 +62,9 @@ class _AuthenticationState extends State<Authentication> {
                     ),
                     decoration: InputDecoration(
                       filled: true, 
-                      fillColor: const Color(0xFFE0E0E0),
+                      fillColor:  Color(0xFFE0E0E0),
                       hintText: "Enter your firstname",
-                      hintStyle: const TextStyle(color: Colors.grey, fontSize: 18),
+                      hintStyle:  TextStyle(color: Colors.grey, fontSize: 18),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide.none
