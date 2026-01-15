@@ -16,15 +16,15 @@ class FavoriteScreen extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(12),
+              padding:  EdgeInsets.all(12),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: ElevatedButton.icon(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-                  label: const Text(
+                  icon:  Icon(Icons.arrow_back_ios, color: Colors.black),
+                  label:  Text(
                     "Go back",
                     style: TextStyle(color: Colors.black),
                   ),
@@ -48,7 +48,7 @@ class FavoriteScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 40),
+             SizedBox(height: 40),
 
             //Container for List
             Expanded(
@@ -61,8 +61,8 @@ class FavoriteScreen extends StatelessWidget {
                     topRight: Radius.circular(30),
                   ),
                 ),
-                child: favoriteProducts.isEmpty?  
-                Center(
+                child: favoriteProducts.isEmpty
+                    ? Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -83,13 +83,13 @@ class FavoriteScreen extends StatelessWidget {
                         ),
                       )
                     : ListView.builder(
-                        padding: const EdgeInsets.all(10),
+                        padding:  EdgeInsets.all(10),
                         itemCount: favoriteProducts.length,
                         itemBuilder: (context, index) {
                           final product = favoriteProducts[index];
                           return Card(
                             elevation: 2,
-                            margin: const EdgeInsets.symmetric(vertical: 8),
+                            margin:  EdgeInsets.symmetric(vertical: 8),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -105,16 +105,16 @@ class FavoriteScreen extends StatelessWidget {
                               ),
                               title: Text(
                                 product.title,
-                                style: const TextStyle(
+                                style:  TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               subtitle: Text(
-                                product.price.toString(), 
-                                style: const TextStyle(color: Colors.orange),
+                                product.price.toString(),
+                                style:  TextStyle(color: Colors.orange),
                               ),
                               trailing: IconButton(
-                                icon: const Icon(
+                                icon:  Icon(
                                   Icons.favorite,
                                   color: Colors.orange,
                                 ),
